@@ -1,0 +1,124 @@
+@import "compass/css3/box-sizing";
+@import "./variables";
+
+// Font
+@import url("https://fonts.googleapis.com/css?family=Lobster");
+
+* {
+    padding: 0;
+    margin: 0;
+    @include box-sizing(border-box);
+    color: $general_text_font_color;
+    font-style: normal;
+}
+
+body {
+    display: block;
+    margin: 0 auto;
+    width: 980px;
+    min-height: 900px;
+    background-color: $background_color;
+}
+
+.fortinetWebApp {
+    width: inherit;
+    height: inherit;
+    margin: 0 10px;
+
+    .header {
+        position: fixed;
+        display: block;
+        width: 980px;
+        height: $header_height;
+        border: solid 1px $black;
+        margin-bottom: 20px;
+        background-color: $content_background_color;
+        z-index: 1;
+
+        .fortinetIcon {
+            float: left;
+            width: 200px;
+            height: 100%;
+            text-align: center;
+        }
+
+        .searchBar {
+            color: red;
+            float: right;
+            width: 680px;
+
+            input[type='text'] {
+                width: 100%;
+                font-size: $search_bar_font_size;
+            }
+        }
+    }
+
+    .mainContent {
+        height: 850px;
+        display: block;
+        width: inherit;
+        font-family: "sans serif";
+        margin-bottom: 20px;
+
+        .navigation, .appSignatureList {
+            border: solid 1px $black;
+            height: 100%;
+            background-color: $content_background_color;
+        }
+
+        .navigation {
+            position: fixed;
+            top: $header_height + 10px;
+            width: 250px;
+            float: left;
+            z-index: 1;
+            list-style-type: none;
+            text-align: center;
+            font-size: $nav_row_font_size;
+
+            .navigationTitle {
+                font-size: $nav_title_font_size;
+                font-weight: bold;
+                font-family: 'Lobster', cursive;
+                border-bottom: 1px dashed $black;
+                border-top: 1px dashed $black;
+                padding-bottom: 4px;
+
+                &:first-child {
+                    border-top-style: none;
+                }
+            }
+
+            .companyNavigationRowOn, .typeNavigationRowOn {
+                font-family: 'Titillium Web', sans-serif;
+                padding-bottom: 2px;
+                background-color: $information_font_color;
+            }
+
+            .companyNavigationRowOff, .typeNavigationRowOff{
+                font-family: 'Titillium Web', sans-serif;
+                padding-bottom: 2px;
+            }
+        }
+
+        .appSignatureList {
+            position: relative;
+            top: $header_height + 10px;
+            float: right;
+            width: 650px;
+            list-style-type: none;
+            text-align: center;
+            font-size: $app_sig_row_font_size;
+
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            th {
+                background-color: #4CAF50;
+                color: white;
+            }
+        }
+    }
+}
