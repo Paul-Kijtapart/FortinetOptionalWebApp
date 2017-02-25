@@ -9,7 +9,7 @@ npm run deploy
 ```
 Now open up index.html file in public
 
-# Responsibilities
+### Responsibilities
 - Designed and implemented the interface of this client with SASS.
 - Implemented searching for company by name or its prefix.
 - Implemented filtering companies by its company_name or its service_type.
